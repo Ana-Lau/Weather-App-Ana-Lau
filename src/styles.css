@@ -1,0 +1,57 @@
+body {
+  font-family: sans-serif;
+  text-align: left;
+  border: 3px solid #0069d9;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 400px;
+}
+
+h1 {
+  color: #0069d9;
+  font-size: 25px;
+  font-weight: bold;
+}
+h2,
+h3 {
+  color: #adb5bd;
+  font-size: 15px;
+  font-weight: 500;
+}
+.temperature {
+  font-size: 48px;
+  padding: 10px;
+  margin: 8px;
+}
+.units {
+  color: white;
+  padding: 10px;
+  margin: 8px;
+}
+.fa-cloud-showers-heavy,
+.fa-cloud-sun {
+  font-size: 40px;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.characteristics {
+  font-size: 12px;
+}
+
+.row-now {
+  border: 2px solid #0069d9;
+  background: rgb(136, 194, 252);
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  vertical-align: baseline;
+}
+hr {
+  border-color: #0069d9;
+}
+.next {
+  color: #adb5bd;
+  text-align: center;
+  font-size: 12px;
+}
