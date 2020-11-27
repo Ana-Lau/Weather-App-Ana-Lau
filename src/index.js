@@ -26,9 +26,9 @@ function formatDate(date) {
   ${currentDate} ${hours}h${minutes}`;
 }
 
-let dateElement = document.querySelector("#date");
+let date = document.querySelector("#date");
 let currentTime = new Date();
-document.querySelector("#date").innerHTML = formatDate(currentTime);
+date.innerHTML = formatDate(currentTime);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
