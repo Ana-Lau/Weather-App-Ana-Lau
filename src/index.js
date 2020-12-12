@@ -54,17 +54,28 @@ function displayWeatherCondition(response) {
 
 function displayForecast(response) {
   let forecastElement = document.querySelectorAll("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML += ` 
-    <h3>
-    ${forecast.time.day}
-      ${Math.round(forecast.main.temp_min)}°
-        <strong>
-          ${Math.round(forecast.main.temp_max)}°
-        </strong>
-        </h3>
+    forecastElement.innerHTML = ` 
+  
+          <div class="col">
+            
+              ${getHours(forecast.dt)}
+              <br />
+              ${Math.round(forecast.main.temp_min)}° 
+              <strong>
+              ${Math.round(forecast.main.temp_max)}°</strong>
+ 
+              <img scr="http://openweathermap.org/img/wn/${
+                forecast.weather[0].icon
+              }@2x.png"
+              />
+           
+          </div>
+        
   `;
   }
 }
