@@ -34,23 +34,29 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 function displayWeatherCondition(response) {
+  let iconElement = document.querySelector("#icon");
+  let wind = Math.round(response.data.wind.speed);
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  let wind = Math.round(response.data.wind.speed);
+
   document.querySelector("#wind").innerHTML = `Wind: ${wind} km`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function displayForecast(response) {
   let forecastElement = document.querySelectorAll("#forecast");
 
   for (let index = 0; index < 6; index++) {
-    forecast = response.data.forecast.time.day;
+    forecast = response.data.list[index];
     forecastElement.innerHTML += ` 
     <h3>
     ${forecast.time.day}
