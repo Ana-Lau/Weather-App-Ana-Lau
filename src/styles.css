@@ -52,7 +52,14 @@ hr {
 }
 .next {
   color: #adb5bd;
-  text-align: center;
+  text-align: left;
+  font-size: 8px;
+}
+
+.text-center {
   font-size: 12px;
 }
 
+.text-center img {
+  width: 100%;
+}
